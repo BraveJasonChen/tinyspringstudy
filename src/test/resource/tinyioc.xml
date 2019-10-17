@@ -10,6 +10,10 @@
 
     <bean name="helloWorldService" class="brave.chenwei.tinyspringstudy.HelloWorldService">
         <property name="text" value="Hello World!"></property>
+        <property name="outputService" ref="outputService"></property>
     </bean>
 
+    <bean name="outputService" class="brave.chenwei.tinyspringstudy.OutputService">
+        <property name="helloWorldService" ref="helloWorldService"></property>
+    </bean>
 </beans>
